@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{8C2AAD2C-1AAF-6961-CB7F-3B579E2A46F1}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DrawLineManager.cs">
+    <Files>
+      <File FileName="Assets/DrawLineManager.cs" Line="14" Column="47" />
+      <File FileName="Assets/Color Picker/Scripts/Draggable.cs" Line="33" Column="39" />
+      <File FileName="Assets/ColorManager.cs" Line="26" Column="41" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

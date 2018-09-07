@@ -8,6 +8,8 @@ public class DrawLineManager : MonoBehaviour {
     public OVRInput.Controller device;
     private MeshLineRenderer currLine;
     private int numClicks = 0;
+    private float width = .1f;
+    private List<GameObject> gameObjects = new List<GameObject>();
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +23,8 @@ public class DrawLineManager : MonoBehaviour {
             go.AddComponent<MeshRenderer>();
             currLine = go.AddComponent<MeshLineRenderer>();
             currLine.lmat = new Material(lmat);
-            currLine.setWidth(.1f);
+            currLine.setWidth(width);
+            gameObjects.Add(go);
         } else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger, device)) { //held down
             currLine.AddPoint(OVRInput.GetLocalControllerPosition(device));
             numClicks++;
@@ -33,5 +36,22 @@ public class DrawLineManager : MonoBehaviour {
         if (currLine != null) {
             currLine.lmat.color = ColorManager.Instance.GetCurrentColor();
         }
-	}
+
+        if (OVRInput.GetUp(OVRInput.Button.One, device)) { //A button decreases stroke size
+            if (width > 0.05f) {
+                width = width - 0.05f;
+            }
+        }
+        if (OVRInput.GetUp(OVRInput.Button.Two, device)) { //B button increases stroke size
+            if (width < 0.3f) {
+                width = width + 0.05f;
+            }
+        }
+
+        if (OVRInput.GetUp(OVRInput.Button.Start)) { //Start button clears all lines
+            foreach (GameObject g in gameObjects) {
+                Destroy(g);
+            }
+        }
+    }
 }

@@ -16,7 +16,7 @@ public class Draggable : MonoBehaviour
         { //initial press
         
 			dragging = false;
-            // How can I get a raycast
+            // Get a raycast from position and rotation
             Ray ray = new Ray(OVRInput.GetLocalControllerPosition(device), OVRInput.GetLocalControllerRotation(device) * Vector3.forward);
 			RaycastHit hit;
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {

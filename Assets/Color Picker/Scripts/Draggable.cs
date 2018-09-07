@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
-    public OVRTrackedRemote device;
+    public OVRInput.Controller device;
 
     public bool fixX;
 	public bool fixY;
@@ -12,21 +12,21 @@ public class Draggable : MonoBehaviour
 	void FixedUpdate()
 	{
 
-        device = OVRInput.Get;
-        if (device.getTouchDown(OVRTrackedRemote.ButtonMask.Trigger))
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger, device))
         { //initial press
         
 			dragging = false;
-            Ray ray = new Ray(device.transform.position, device.transform.forward);
+            // How can I get a raycast
+            Ray ray = new Ray(OVRInput.GetLocalControllerPosition(device), OVRInput.GetLocalControllerRotation(device) * Vector3.forward);
 			RaycastHit hit;
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
 				dragging = true;
 			}
 		}
-		if (device.getTouchUp(OVRTrackedRemote.ButtonMask.Trigger)) dragging = false;
-		if (dragging && device.getTouch(OVRTrackedRemote.ButtonMask.Trigger)) {
+		if (OVRInput.GetUp(OVRInput.RawButton.RIndexTrigger, device)) dragging = false;
+		if (dragging && OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger, device)) {
 
-            Ray ray = new Ray(device.transform.position, device.transform.forward);
+            Ray ray = new Ray(OVRInput.GetLocalControllerPosition(device), OVRInput.GetLocalControllerRotation(device) * Vector3.forward);
             RaycastHit hit;
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
             {

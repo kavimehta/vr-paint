@@ -368,9 +368,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 12fbffff
-    m_LastClickedID: -1262
-    m_ExpandedIDs: d4fbffff00000000
+    m_SelectedIDs: 5a110000
+    m_LastClickedID: 4442
+    m_ExpandedIDs: c4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -546,9 +546,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7a0b0000
-    m_LastClickedID: 2938
-    m_ExpandedIDs: 000000007a0b00001c0c0000ae0f0000d610000000ca9a3b
+    m_SelectedIDs: 8c0b0000
+    m_LastClickedID: 2956
+    m_ExpandedIDs: 000000008c0b00002e0c0000c00f0000e810000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +576,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007a0b00001c0c0000ae0e0000ae0f0000
+    m_ExpandedIDs: 000000008c0b00002e0c0000c00f0000e8100000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -5,13 +5,13 @@ public class ColorIndicator : MonoBehaviour {
 	HSBColor color;
 
 	void Start() {
-		color = HSBColor.FromColor(renderer.sharedMaterial.GetColor("_Color"));
+		color = HSBColor.FromColor(GetComponent<Renderer>().sharedMaterial.GetColor("_Color"));
 		transform.parent.BroadcastMessage("SetColor", color);
 	}
 
 	void ApplyColor ()
 	{
-		renderer.sharedMaterial.SetColor ("_Color", color.ToColor());
+		GetComponent<Renderer>().sharedMaterial.SetColor ("_Color", color.ToColor());
 		transform.parent.BroadcastMessage("OnColorChange", color, SendMessageOptions.DontRequireReceiver);
 	}
 

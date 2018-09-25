@@ -9,24 +9,29 @@ public class Draggable : MonoBehaviour
 	public Transform thumb;	
 	bool dragging;
 
+    public GameObject anchor;
+
 	void FixedUpdate()
 	{
 
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger, device))
+        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger, device))
         { //initial press
+
+            print("Left index press");
         
 			dragging = false;
             // Get a raycast from position and rotation
-            Ray ray = new Ray(OVRInput.GetLocalControllerPosition(device), OVRInput.GetLocalControllerRotation(device) * Vector3.forward);
+            Ray ray = new Ray(anchor.transform.position, anchor.transform.forward);
 			RaycastHit hit;
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
 				dragging = true;
+                print(dragging);
 			}
 		}
-		if (OVRInput.GetUp(OVRInput.RawButton.RIndexTrigger, device)) dragging = false;
-		if (dragging && OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger, device)) {
+		if (OVRInput.GetUp(OVRInput.RawButton.LIndexTrigger, device)) dragging = false;
+		if (dragging && OVRInput.Get(OVRInput.RawButton.LIndexTrigger, device)) {
 
-            Ray ray = new Ray(OVRInput.GetLocalControllerPosition(device), OVRInput.GetLocalControllerRotation(device) * Vector3.forward);
+            Ray ray = new Ray(anchor.transform.position, anchor.transform.forward);
             RaycastHit hit;
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
             {

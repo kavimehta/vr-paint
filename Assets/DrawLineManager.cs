@@ -48,7 +48,7 @@ public class DrawLineManager : MonoBehaviour {
             }
         }
 
-        if (OVRInput.GetUp(OVRInput.Button.Start)) { //Start button clears all lines
+        if (OVRInput.GetUp(OVRInput.RawButton.X)) { //X button clears all lines
             foreach (GameObject g in gameObjects) {
                 Destroy(g);
             }

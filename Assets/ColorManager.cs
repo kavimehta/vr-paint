@@ -10,6 +10,16 @@ public class ColorManager : MonoBehaviour {
     {
         if (Instance == null) {
             Instance = this;
+            print("Create color manager");
+        }
+    }
+
+    void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            print("Create color manager");
         }
     }
 
@@ -22,8 +32,9 @@ public class ColorManager : MonoBehaviour {
 
     private Color color;
 
-    void onColorChange(HSBColor newColor) {
+    void OnColorChange(HSBColor newColor) {
         this.color = newColor.ToColor();
+        print("Color change");
     }
 
     public Color GetCurrentColor() {
